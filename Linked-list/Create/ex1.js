@@ -26,3 +26,27 @@
   A linked list, as you can see, is nothing more than objects nested deeply inside of each other.
   The next property of each node object in the list is a reference to the next node object.
 */
+
+class LinkedList{
+  constructor(value){
+    this.head =  null;
+    this.length = 0;
+    this.addToHead(value);
+  }
+
+  addToHead(value) {
+    // standard way of adding node to the head.
+    // 1. create "new Node"
+    // 2. attach the new Node with the head. This step is known as the "chaining part"
+    // 3. Now each node is linked together, we finally reassigned the head to the new Node.
+    const newNode = { value }
+    newNode.next = this.head;
+    this.head = newNode;
+    this.length++
+    return this;
+  }
+};
+const list = new LinkedList('first')
+    .addToHead('second')
+    .addToHead('third');
+console.log(list);
