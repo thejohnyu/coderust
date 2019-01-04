@@ -14,7 +14,7 @@ class Linkedlist {
         this.length++;
         return this;
     }
-    removeHead(){
+    removeFromHead(){
         if(this.length === 0) return undefined;
 
         const value = this.head.value;
@@ -35,20 +35,25 @@ class Linkedlist {
         return thisNode;
     }
     remove(val) {
+        // 1. Typical Guard
         if(this.length === 0) {
             return undefined;
         }
+        // 2. Another Guard incase the user wants to remove from head.
         if (this.head.value === val) {
             return this.removeFromHead();
         }
+        // 3. Previous is always the current node
+        // 4. thisNode is always current.node.next
         let previousNode = this.head;
         let thisNode = previousNode.next;
         while(thisNode) {
             if(thisNode.value === val) {
                 break;
+                // 5. if you located the value break out of this loop
             }
-            previousNode = thisNode;
-            thisNode = thisNode.next;
+            previousNode = thisNode; // 6. this.head.next;
+            thisNode = thisNode.next; // 7. this.head.next.next
         }
         if (thisNode === null) {
             return undefined;
