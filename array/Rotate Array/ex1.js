@@ -15,6 +15,7 @@ let rotate_array_in_place = function(arr, n) {
   // if n > array size or n is negative.
   n = n % len;
   if (n < 0) {
+    console.log(n + len)
     // calculate the positive rotations needed.
     n = n + len;
   }

@@ -56,3 +56,15 @@ console.log("Find Bust Intervals");
 console.log("---------------------------------------");
 console.log(find_busy_intervals(arr1));
 console.log(find_busy_intervals(arr2));
+
+const test = arr => {
+  let currentMinMax = [{first: 0, second: 0}]
+
+  for (let i = 0; i < arr.length; i++) {
+    const { first, second } = arr[i]
+
+    if(first > )
+  }
+
+
+}

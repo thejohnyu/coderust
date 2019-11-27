@@ -8,7 +8,13 @@ let move_zeros_to_left = function(arr) {
   return arr;
 };
 
+const moveZeros = (arr, start = 0, end = arr.length - 1) => {
+  while (start < end) {
+    
+  }
+};
+
 let v = [1, 10, -1, 11, 5, 0, -7, 0, 25, -35];
-console.log("Original Array: ["+v+"]");
+console.log("Original Array: [" + v + "]");
 move_zeros_to_left(v);
-console.log("After Moving Zeros: ["+v+"]");
+console.log("After Moving Zeros: [" + v + "]");

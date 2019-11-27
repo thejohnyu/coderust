@@ -6,7 +6,7 @@ function Node(element) {
 
 // The only property stored in a linked list is a node to represent the head of the list and the head  node starts with its next property set to null.
 
- function LList() {
+ function List() {
   this.head = new Node("head");
   this.find = find;
   this.insert = insert;
