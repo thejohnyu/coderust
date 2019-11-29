@@ -64,13 +64,22 @@ const list = new LinkedList();
 const reverseList = head => {
   // no need to reverse if the head is null
   // or there is only 1 node ( standard checks for lenghts 0/1 )
-  if (!head ||  !head.next) {
-    return head
+  if (!head || !head.next) {
+    return head;
   }
 
-  let current = head.next
-  let reversedHead = head
-  reverseListHead.next = null
+  let current = head.next;
+  let reversedHead = head;
+  reverseListHead.next = null;
+
+  while (current !== null) {
+    let temp = current; // store a place holder for the current element
+    current = current.next; // traverse to each one until the while loop condition
+
+    temp.next = reversedHead; // head.next = acc
+    reversedHead.next = temp; // acc.next = temp
+  }
+
+  return reverseListHead;
 };
 console.log("list ===>", list);
-
