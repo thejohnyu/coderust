@@ -7,11 +7,11 @@ let merge_sorted = function(head1, head2) {
         return head1;
     }
 
-    let mergedHead = null;
+    let mergedHead = null; // merged head is like the results here
     if (head1.data <= head2.data) {
-        mergedHead = head1;
-        head1 = head1.next;
-    } else {
+        mergedHead = head1; // why does mergedHead retain a reference to head1 ??
+        head1 = head1.next; // 
+    } else { // head1.data => head2.data 
         mergedHead = head2;
         head2 = head2.next;
     }
@@ -29,7 +29,8 @@ let merge_sorted = function(head1, head2) {
         }
 
         mergedTail.next = temp;
-        mergedTail = temp;
+        mergedTail = temp; 
+        console.log('temp.next', temp.next)
     }
 
     if (head1) {
