@@ -33,15 +33,15 @@ let reverse_even_nodes = function(head) {
     // head since we want them to be in reverse order.
 
     let curr = head;
-    let list_even = null;
+    let acc = null;
 
     while (curr && curr.next) {
         let even = curr.next;
         curr.next = even.next;
 
         // Push at the head of new list.
-        even.next = list_even;
-        list_even = even;
+        even.next = acc;
+        acc = even;
 
         curr = curr.next;
     }
@@ -49,7 +49,7 @@ let reverse_even_nodes = function(head) {
     // Now, merge the two lists
     // Original: 1,2,3,4,5
     // Modified original: 1,3,5
-    // List_even: 4,2
+    // acc: 4,2
     // Merged: 1,4,3,2,5
 
     return merge_alternating(head, list_even);
