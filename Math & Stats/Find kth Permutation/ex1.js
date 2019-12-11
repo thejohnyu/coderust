@@ -39,6 +39,7 @@ console.log("Find Kth Permutation");
 console.log("---------------------------------------");
 let x = 3;
 let n = factorial(x);
+
 for (let i = 1; i <= n; i++) {
     let temp = get_permutation(x, i);
     console.log(i + "th permutation = ", temp);
