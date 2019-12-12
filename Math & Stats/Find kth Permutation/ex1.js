@@ -9,15 +9,16 @@ let find_kth_permutation = function(v, k, result) {
     if (!v || v.length === 0) {
         return;
     }
-
     let n = v.length;
-    // count is number of permutations starting with first digit
-    let count = factorial(n - 1);
+    // count is number of permutations starting with first digit 
+    let count = factorial(n - 1); // 6 2 1 1
     let selected = Math.floor((k - 1) / count);
-    result[0] += '' + v[selected];
-    v.splice(selected, 1);
-    k = k - (count * selected);
 
+    result[0] += '' + v[selected];
+    v.splice(selected, 1); // remove each selected from the original array
+    console.log('before k ===>', k)
+    k = k - (count * selected);
+    console.log('after k ====>', k)
     find_kth_permutation(v, k, result);
 };
 
@@ -37,7 +38,7 @@ console.log("");
 console.log("+++++++++++++++++++++++++++++++++++++++");
 console.log("Find Kth Permutation");
 console.log("---------------------------------------");
-let x = 3;
+let x = 4;
 let n = factorial(x);
 
 for (let i = 1; i <= n; i++) {
