@@ -46,7 +46,7 @@ console.log("");
 console.log("+++++++++++++++++++++++++++++++++++++++");
 console.log("Find Pythagorean Triplet Solution 1");
 console.log("---------------------------------------");
-let pythagorean_1 = [4, 8, 19, 6, 3, 12, 18, 9, 5, 15, 10];
+let pythagorean_1 = [4, 6, 10, 5, 8, 25];
 let pythagorean_result_1 = find_pythagorean_triplets_1(pythagorean_1);
 console.log(pythagorean_1);
 console.log(pythagorean_result_1);
