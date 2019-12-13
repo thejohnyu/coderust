@@ -26,6 +26,6 @@ let permute_string = function(input) {
     permute_string_rec(input, 0);
 };
 
-let input = "abc";
+let input = "bad";
 permute_string(input);
 console.log(result);
