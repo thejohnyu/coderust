@@ -40,7 +40,7 @@ console.log("result2 ==>", result2);
 
 let cache = {};
 
-function genericPossibleCombos(arr, target) {
+function genericAllPossibleCombos(arr, target) {
   let result = [];
   let visted = [];
   arr = arr.sort((a, b) => a - b);
@@ -53,5 +53,5 @@ function genericPossibleCombos(arr, target) {
     }
   });
 
-  return [result, newResult];
+  return result
 }

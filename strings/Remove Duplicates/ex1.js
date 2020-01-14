@@ -1,4 +1,4 @@
-let replaceAt = function(string, index, character) {
+let replaceAt = function(string, index, character) { // (a, index(position), b)
     return string.substr(0, index) + character + string.substr(index + character.length);
   }
   
