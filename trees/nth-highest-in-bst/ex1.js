@@ -1,21 +1,21 @@
 let current_count = 0;
-let find_nth_highest_in_bst = function(node, n) {
+let find_nth_highest_in_bst = function(node, n) { // 100, n = 3, 200, n =3, 125, 2
   if (!node) {
     return null;
   }
 
-  let result = find_nth_highest_in_bst(node.right, n);
-  if (result) {
+  let result = find_nth_highest_in_bst(node.right, n); // 200, count = 0, null count = 1
+  if (result) { // false
     return result;
   }
 
   current_count = current_count + 1;
 
-  if (n === current_count) {
+  if (n === current_count) { // false, 
     return node;
   }
 
-  result = find_nth_highest_in_bst(node.left, n);
+  result = find_nth_highest_in_bst(node.left, n); // 125, count = 2
   if (result) {
     return result;
   }
