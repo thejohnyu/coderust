@@ -20,7 +20,7 @@ let delete_zero_sum_subtree_rec = function(root) {
 let delete_zero_sum_subtree = function(root) {
   if (root) {
     let sum = delete_zero_sum_subtree_rec(root);
-    if (sum === 0) {
+    if (sum === 0) { // delete sub tree when sub root === 0
       root = null;
     }
   }
