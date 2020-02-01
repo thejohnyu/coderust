@@ -2,21 +2,23 @@ let convert_n_ary_to_binary = function(node) {
   return convert_n_ary_to_binary_rec(node, 1);
 };
 
-let convert_n_ary_to_binary_rec = function(root, isLeft) {
+let convert_n_ary_to_binary_rec = function(root, isLeft) { // (6, 1)
   if (!root) {
     return;
   }
 
-  let btnode = new BinaryTreeNode(root.data);
-  let lastnode = btnode;
+  let btnode = new BinaryTreeNode(root.data); // 5, 6
+  let lastnode = btnode; // 5, 6
 
-  for (let c in root.children) {
+  for (let c in root.children) { // we are still in the same scope [5, 6]
     if (isLeft === 1) {
       lastnode.left = convert_n_ary_to_binary_rec(root.children[c], 0);
       lastnode = lastnode.left;
     } else {
+      // when you append {data: 5, left: null, right: null}
+      // root.children = [5, 6]
       lastnode.right = convert_n_ary_to_binary_rec(root.children[c], 1);
-      lastnode = lastnode.right;
+      lastnode = lastnode.right; // 1,2,3,5
     }
   }
 
