@@ -11,9 +11,17 @@ class Queue {
   }
 
   dequeue(){
-    const value = this.storage[this.length];
+    const value = this.storage[this.headIndex];
+    delete this.storage[this.headIndex]
+    this.headIndex++
     return value;
   }
+
+  size() {
+    return this.length - this.headIndex
+  }
+
+  
 }
 
 const newQueue = new Queue();
