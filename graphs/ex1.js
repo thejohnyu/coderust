@@ -4,7 +4,7 @@ class Graph {
     }
 
     addNode(node) {
-        this.adjList[node.val]: {
+        this.adjList[node.value] = {
             node: node,
             edges: []
         }
@@ -28,3 +28,11 @@ class Graph {
         })
     }
 }
+
+// const adjList = {
+//     1: [2, 5],
+//     2: [1,5,3,4],
+//     3: [2,4],
+//     4: [2,5,3],
+//     5: [4,1,2]
+// }
