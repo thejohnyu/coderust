@@ -1,3 +1,14 @@
+// Pseudocode: Merge
+// mergeSort(list)
+// initialize n to the length of the list
+// base case is if n < 2, just return
+// initialize mid to n/2
+// left = left slice of array to mid - 1
+// right = right slice of array mid to n - 1
+// mergeSort(left)
+// mergeSort(right)
+// merge(left, right)
+
 const mergeSort = arr => {
   if (arr.length === 1) {
     return arr;
