@@ -12,7 +12,7 @@ class Graph {
 
   addEdge(node1, node2) {
     this.adjList[node1.value].edges.push(node2.value);
-    this.adjList[node2.value].edges.push(node1.value);
+    // this.adjList[node2.value].edges.push(node1.value);
   }
 
   removeNode(node) {
@@ -29,32 +29,35 @@ class Graph {
       }
     });
   }
+  printGraph() {
+    const nodes = Object.keys(this.adjList);
+    nodes.forEach(curNode => {
+      const edges = this.adjList[curNode].edges;
+      console.log(curNode, "-->", edges);
+    });
+  }
 }
 
-// const adjList = {
-//     1: [2, 5],
-//     2: [1,5,3,4],
-//     3: [2,4],
-//     4: [2,5,3],
-//     5: [4,1,2]
-// }
-
 const adjList = new Graph();
+const node0 = { value: 0 };
 const node1 = { value: 1 };
 const node2 = { value: 2 };
+const node3 = { value: 3 };
+const node4 = { value: 4 };
+// Add vertexs
+adjList.addNode(node0);
 adjList.addNode(node1);
 adjList.addNode(node2);
+adjList.addNode(node3);
+adjList.addNode(node4);
+// Add edges
+adjList.addEdge(node0, node2);
+adjList.addEdge(node0, node3);
+adjList.addEdge(node0, node4);
 adjList.addEdge(node1, node2);
-let print_graph = function(vertices) {
-  for (let [key, values] of Object.entries(vertices)) {
-    console.log('Node:', key)
-    values.edges.forEach((edge) => {
-        console.log('edges:', edge)
-    })
-  }
-};
-
-console.log(print_graph(adjList.adjList));
-// console.log('adjList ===> before ===>', adjList.adjList['1']);
-// //adjList.removeNode(node1)
-// console.log('adjList ===> after ===>', adjList.adjList);
+adjList.addEdge(node2, node0);
+adjList.addEdge(node3, node2);
+adjList.addEdge(node4, node0);
+adjList.addEdge(node4, node1);
+adjList.addEdge(node4, node3);
+adjList.printGraph();
