@@ -16,3 +16,25 @@ const memoize = (callback) => {
 
 // Basically the cache / callback stays the stay
 // The only thing that changes is the arguements
+
+function memoize(fn) {
+    /* we'll use this object to store the results */
+    let cache = {};
+
+    /**
+     * Returns a function that will receive the arguments
+     * that will be passed to the memoized function (fn).
+     */
+    return (...args) => {
+        /* We stringify the arguments in case they're non-primitive values */
+        const cacheKey = JSON.stringify(args);
+
+        /* were the arguments already passed? if no, then store the result */
+        if (!(cacheKey in cache)) {
+            cache[cacheKey] = fn(...args);
+        }
+
+        /* We then return the stored result */
+        return cache[cacheKey];
+    };
+}
