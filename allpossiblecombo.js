@@ -34,7 +34,7 @@ let num = 10;
 let arr = [-11, -10, -9, -8, -7, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const result = allPossibleCombos(arr, num);
-const result2 = genericPossibleCombos(arr, num);
+const result2 = genericAllPossibleCombos(arr, num);
 console.log("result ===>", result);
 console.log("result2 ==>", result2);
 
